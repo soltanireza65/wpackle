@@ -1,0 +1,32 @@
+<?php
+$image_links = $product->get_gallery_image_ids();
+
+?>
+<div class="swiper-container product-galley ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <?php the_post_thumbnail('medium') ?>
+        </div>
+        <?php
+        foreach ($image_links as $attachment_id) { ?>
+            <div class="swiper-slide">
+                <img src="<?php echo wp_get_attachment_url($attachment_id) ?>" />
+            </div>
+        <?php  }
+        ?>
+    </div>
+</div>
+<div thumbsSlider="" class="swiper-container product-galley-thumbs">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <?php the_post_thumbnail('medium') ?>
+        </div>
+        <?php
+        foreach ($image_links as $attachment_id) { ?>
+            <div class="swiper-slide">
+                <img src="<?php echo wp_get_attachment_url($attachment_id) ?>" />
+            </div>
+        <?php  }
+        ?>
+    </div>
+</div>
